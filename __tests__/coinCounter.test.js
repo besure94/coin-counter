@@ -9,11 +9,16 @@ describe('Coin counter function', () => {
 
   test('Should return an error for a non-numeric input', () => {
     const amount = "number";
-    expect(() => coinCounter(amount)).toThrow("Invalid amount. Please enter a positive number");
+    expect(() => coinCounter(amount)).toThrow("Invalid amount. Please enter a positive number.");
   });
 
   test('Should return an error for a negative amount', () => {
     const amount = -1;
-    expect(() => coinCounter(amount)).toThrow("Invalid amount. Please enter a positive number");
+    expect(() => coinCounter(amount)).toThrow("Invalid amount. Please enter a positive number.");
+  });
+
+  test('Should return an error for an amount of 0.', () => {
+    const amount = 0;
+    expect(() => coinCounter(amount)).toThrow("Invalid amount. Please enter a positive number.");
   });
 });

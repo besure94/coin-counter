@@ -21,4 +21,9 @@ describe('Coin counter function', () => {
     const amount = 0;
     expect(() => coinCounter(amount)).toThrow("Invalid amount. Please enter a positive number.");
   });
+
+  test('Should accept a decimal number', () => {
+    const amount = 1.25;
+    expect(coinCounter(amount)).toEqual(1.25);
+  });
 });

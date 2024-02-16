@@ -6,4 +6,9 @@ describe('Coin counter function', () => {
     const amount = 1;
     expect(coinCounter(amount)).toEqual(1);
   });
+
+  test('Should return an error for a non-numeric input', () => {
+    const amount = "number";
+    expect(() => coinCounter(amount)).toThrow("Invalid amount. Please enter a positive number");
+  });
 });

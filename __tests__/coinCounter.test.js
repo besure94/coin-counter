@@ -17,8 +17,13 @@ describe('Coin counter function', () => {
     expect(() => coinCounter(amount)).toThrow("Invalid amount. Please enter a positive number.");
   });
 
-  test('Should return true for a valid decimal with two decimal places', () => {
+  test('Should return true for a number with two decimal places', () => {
     const amount = 1.25;
     expect(coinCounter(amount)).toBe(true);
+  });
+
+  test('Should return false for a number with more than two decimal places', () => {
+    const amount = 1.255;
+    expect(coinCounter(amount)).toBe(false);
   });
 });

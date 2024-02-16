@@ -2,6 +2,11 @@ import coinCounter from './../src/js/coinCounter.js';
 
 describe('Coin counter function', () => {
 
+  test('Should return an error for an empty amount.', () => {
+    const amount = null;
+    expect(() => coinCounter(amount)).toThrow("Invalid amount. Please enter a positive number.");
+  });
+
   test('Should return an error for a non-numeric input', () => {
     const amount = "number";
     expect(() => coinCounter(amount)).toThrow("Invalid amount. Please enter a positive number.");
@@ -25,11 +30,6 @@ describe('Coin counter function', () => {
   test('Should return false for a number with more than two decimal places', () => {
     const amount = 1.255;
     expect(coinCounter(amount)).toBe(false);
-  });
-
-  test('Should return an error for an empty amount.', () => {
-    const amount = null;
-    expect(() => coinCounter(amount)).toThrow("Invalid amount. Please enter a positive number.");
   });
 
   test('Should return true for a whole positive number.', () => {

@@ -31,4 +31,9 @@ describe('Coin counter function', () => {
     const amount = null;
     expect(() => coinCounter(amount)).toThrow("Invalid amount. Please enter a positive number.");
   });
+
+  test('Should return true for a whole positive number.', () => {
+    const amount = 5;
+    expect(coinCounter(amount)).toBe(true);
+  })
 });

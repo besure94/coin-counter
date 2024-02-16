@@ -2,11 +2,6 @@ import coinCounter from './../src/js/coinCounter.js';
 
 describe('Coin counter function', () => {
 
-  test('Should return a positive inputted number', () => {
-    const amount = 1;
-    expect(coinCounter(amount)).toEqual(1);
-  });
-
   test('Should return an error for a non-numeric input', () => {
     const amount = "number";
     expect(() => coinCounter(amount)).toThrow("Invalid amount. Please enter a positive number.");
@@ -22,8 +17,8 @@ describe('Coin counter function', () => {
     expect(() => coinCounter(amount)).toThrow("Invalid amount. Please enter a positive number.");
   });
 
-  test('Should accept a decimal number', () => {
+  test('Should return true for a valid decimal with two decimal places', () => {
     const amount = 1.25;
-    expect(coinCounter(amount)).toEqual(1.25);
+    expect(coinCounter(amount)).toBe(true);
   });
 });

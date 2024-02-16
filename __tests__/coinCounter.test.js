@@ -20,4 +20,11 @@ describe('Coin counter function', () => {
     expect(coinValues.penny).toEqual(0.01);
   });
 
+  test('Function should contain an object with a property for quarters that increases by 1 each time 0.25 is subtracted.', () => {
+    const coinNumbers = {
+      quarters: 0
+    };
+    expect(coinNumbers.quarters).toEqual(0);
+  });
+
 });

@@ -6,6 +6,12 @@ const coinCounter = (amount) => {
     penny: 0.01
   };
   console.log(coinValues);
+
+  const coinNumbers = {
+    quarters: 0
+  };
+
+  console.log(coinNumbers);
   return amount;
 }
 

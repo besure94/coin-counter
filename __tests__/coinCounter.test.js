@@ -35,5 +35,10 @@ describe('Coin counter function', () => {
   test('Should return true for a whole positive number.', () => {
     const amount = 5;
     expect(coinCounter(amount)).toBe(true);
-  })
+  });
+
+  test('Should return true for a number with one decimal place.', () => {
+    const amount = 1.2;
+    expect(coinCounter(amount)).toBe(true);
+  });
 });

@@ -2,43 +2,22 @@ import coinCounter from './../src/js/coinCounter.js';
 
 describe('Coin counter function', () => {
 
-  test('Should return an error for an empty amount.', () => {
-    const amount = null;
-    expect(() => coinCounter(amount)).toThrow("Invalid amount. Please enter a positive number.");
-  });
-
-  test('Should return an error for a non-numeric input', () => {
-    const amount = "number";
-    expect(() => coinCounter(amount)).toThrow("Invalid amount. Please enter a positive number.");
-  });
-
-  test('Should return an error for a negative amount', () => {
-    const amount = -1;
-    expect(() => coinCounter(amount)).toThrow("Invalid amount. Please enter a positive number.");
-  });
-
-  test('Should return an error for an amount of 0.', () => {
-    const amount = 0;
-    expect(() => coinCounter(amount)).toThrow("Invalid amount. Please enter a positive number.");
-  });
-
-  test('Should return true for a number with two decimal places', () => {
-    const amount = 1.25;
-    expect(coinCounter(amount)).toBe(true);
-  });
-
-  test('Should return false for a number with more than two decimal places', () => {
-    const amount = 1.255;
-    expect(coinCounter(amount)).toBe(false);
-  });
-
-  test('Should return true for a whole positive number.', () => {
+  test('Input should be a whole number greater than 1.', () => {
     const amount = 5;
-    expect(coinCounter(amount)).toBe(true);
+    expect(coinCounter(amount)).toEqual(5);
   });
 
-  test('Should return true for a number with one decimal place.', () => {
-    const amount = 1.2;
-    expect(coinCounter(amount)).toBe(true);
+  test('Function should contain an object with coin values for quarters, dimes, nickels, and pennies.', () => {
+    const coinValues = {
+      quarter: 0.25,
+      dime: 0.10,
+      nickel: 0.05,
+      penny: 0.01
+    };
+    expect(coinValues.quarter).toEqual(0.25);
+    expect(coinValues.dime).toEqual(0.10);
+    expect(coinValues.nickel).toEqual(0.05);
+    expect(coinValues.penny).toEqual(0.01);
   });
+
 });

@@ -1,10 +1,13 @@
 const coinCounter = (amount) => {
-  const validDecimal = /^\d+(\.\d{1,2})?$/;
-  if(isNaN(amount) || amount <= 0) {
-    throw "Invalid amount. Please enter a positive number.";
-  } else {
-    return validDecimal.test(amount);
-  }
+  const coinValues = {
+    quarter: 0.25,
+    dime: 0.10,
+    nickel: 0.05,
+    penny: 0.01
+  };
+  console.log(coinValues);
+  return amount;
 }
 
 export default coinCounter;
+

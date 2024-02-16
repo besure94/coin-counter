@@ -26,4 +26,9 @@ describe('Coin counter function', () => {
     const amount = 1.255;
     expect(coinCounter(amount)).toBe(false);
   });
+
+  test('Should return an error for an empty amount.', () => {
+    const amount = null;
+    expect(() => coinCounter(amount)).toThrow("Invalid amount. Please enter a positive number.");
+  });
 });

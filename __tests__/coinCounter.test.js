@@ -2,13 +2,13 @@ import coinCounter from './../src/js/coinCounter.js';
 
 describe('Coin counter function', () => {
 
-  test('Input should be a whole number greater than 1.', () => {
-    const amount = 5;
-    expect(coinCounter(amount)).toEqual(5);
+  test('Function should not accept a non-numeric input of 0 or less.', () => {
+    const amount = -1;
+    expect(coinCounter(amount)).toBe("Amount should be a number greater than 0.");
   });
 
   test('Function should contain an object with coin values for quarters, dimes, nickels, and pennies.', () => {
-    const coinValues = {
+    const coinValues  = {
       quarter: 0.25,
       dime: 0.10,
       nickel: 0.05,
@@ -20,11 +20,17 @@ describe('Coin counter function', () => {
     expect(coinValues.penny).toEqual(0.01);
   });
 
-  test('Function should contain an object with a property for quarters that increases by 1 each time 0.25 is subtracted.', () => {
+  test('Function should contain an object with a property for quarters.', () => {
     const coinNumbers = {
-      quarters: 0
+      quarters: 0,
+      dimes: 0,
+      nickels: 0,
+      pennies: 0
     };
     expect(coinNumbers.quarters).toEqual(0);
+    expect(coinNumbers.dimes).toEqual(0);
+    expect(coinNumbers.nickels).toEqual(0);
+    expect(coinNumbers.pennies).toEqual(0);
   });
 
 });

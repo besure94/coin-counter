@@ -33,10 +33,12 @@
 
 Steps:
 
-Take in a number ex: 5
+Take in a number greater than 0. Example: 5
 
 Create array/object with values of each coin (quarters, dimes, nickels and pennies)
 
 Take the number and subtract 0.25 until you can't subtract 0.25 anymore. Then do the same with 0.10, 0.05, and 0.01.
 
 Base case will be 0, with an array/object with the number of each coin listed.
+
+Termination case will be any non-numeric input that is 0 or a negative number.

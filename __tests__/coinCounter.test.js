@@ -21,16 +21,28 @@ describe('Coin counter function', () => {
   });
 
   test('Function should contain an object with a property for quarters.', () => {
-    const coinNumbers = {
+    const coinAmounts = {
       quarters: 0,
       dimes: 0,
       nickels: 0,
       pennies: 0
     };
-    expect(coinNumbers.quarters).toEqual(0);
-    expect(coinNumbers.dimes).toEqual(0);
-    expect(coinNumbers.nickels).toEqual(0);
-    expect(coinNumbers.pennies).toEqual(0);
+    expect(coinAmounts.quarters).toEqual(0);
+    expect(coinAmounts.dimes).toEqual(0);
+    expect(coinAmounts.nickels).toEqual(0);
+    expect(coinAmounts.pennies).toEqual(0);
+  });
+
+  test('Function should count the number of quarters for the amount provided.', () => {
+    const amount = 1.50;
+    const coinAmounts = {
+      quarters: 0,
+      dimes: 0,
+      nickels: 0,
+      pennies: 0
+    };
+    const result = coinCounter(amount, coinAmounts);
+    expect(result.quarters).toEqual(6);
   });
 
 });

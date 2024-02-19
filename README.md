@@ -37,6 +37,8 @@ Take in a number greater than 0. Example: 5
 
 Create array/object with values of each coin (quarters, dimes, nickels and pennies)
 
+Create array/object with properties for each coin, to count the total for each coin.
+
 Take the number and subtract 0.25 until you can't subtract 0.25 anymore. Then do the same with 0.10, 0.05, and 0.01.
 
 Base case will be 0, with an array/object with the number of each coin listed.

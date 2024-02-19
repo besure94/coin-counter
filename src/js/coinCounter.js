@@ -16,6 +16,9 @@ const coinCounter = (amount, coinAmounts = { quarters: 0, dimes: 0, nickels: 0, 
   } else if (amount >= coinValues.dime) {
     coinAmounts.dimes++;
     coinCounter(amount - coinValues.dime, coinAmounts);
+  } else if (amount >= coinValues.nickel) {
+    coinAmounts.nickels++;
+    coinCounter(amount - coinValues.nickel, coinAmounts);
   }
 
   return coinAmounts;

@@ -46,7 +46,7 @@ describe('Coin counter function', () => {
   });
 
   test('Function should count the number of dimes for the amount provided.', () => {
-    const amount = 5.20;
+    const amount = 0.20;
     const coinAmounts = {
       quarters: 0,
       dimes: 0,
@@ -54,12 +54,11 @@ describe('Coin counter function', () => {
       pennies: 0
     };
     const result = coinCounter(amount, coinAmounts);
-    expect(result.quarters).toEqual(20);
     expect(result.dimes).toEqual(2);
   });
 
   test('Function should count the number of nickels for the amount provided.', () => {
-    const amount = 5.15;
+    const amount = 0.05;
     const coinAmounts = {
       quarters: 0,
       dimes: 0,
@@ -67,13 +66,11 @@ describe('Coin counter function', () => {
       pennies: 0
     };
     const result = coinCounter(amount, coinAmounts);
-    expect(result.quarters).toEqual(20);
-    expect(result.dimes).toEqual(1);
     expect(result.nickels).toEqual(1);
   });
 
   test('Function should count the number of pennies for the amount provided.', () => {
-    const amount = 5.19;
+    const amount = 0.04;
     const coinAmounts = {
       quarters: 0,
       dimes: 0,
@@ -81,9 +78,21 @@ describe('Coin counter function', () => {
       pennies: 0
     };
     const result = coinCounter(amount, coinAmounts);
-    expect(result.quarters).toEqual(20);
-    expect(result.dimes).toEqual(1);
-    expect(result.nickels).toEqual(1);
+    expect(result.pennies).toEqual(4);
+  });
+
+  test('Function should count the number of each coin for the amount provided.', () => {
+    const amount = 4.99;
+    const coinAmounts = {
+      quarters: 0,
+      dimes: 0,
+      nickels: 0,
+      pennies: 0
+    };
+    const result = coinCounter(amount, coinAmounts);
+    expect(result.quarters).toEqual(19);
+    expect(result.dimes).toEqual(2);
+    expect(result.nickels).toEqual(0);
     expect(result.pennies).toEqual(4);
   });
 

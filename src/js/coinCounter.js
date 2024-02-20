@@ -13,27 +13,45 @@ const coinCounter = (startingAmount) => {
     pennies: 0
   }
 
-  function countCoins(amount, fn) {
-    if (amount <= 0 || typeof amount !== "number") {
-      return "Amount should be a number greater than 0.";
+  let remainingAmount = startingAmount;
+
+  function countQuarters() {
+    if (remainingAmount  >= coinValues.quarter) {
+      coinAmounts.quarters = Math.floor(remainingAmount  / coinValues.quarter);
+      remainingAmount = (remainingAmount - coinAmounts.quarters * coinValues.quarter).toFixed(2);
     }
-    if (amount >= coinValues.quarter) {
-      coinAmounts.quarters++;
-      return fn(amount - coinValues.quarter, fn);
-    } else if (amount >= coinValues.dime) {
-      coinAmounts.dimes++;
-      return fn(amount - coinValues.dime, fn);
-    } else if (amount >= coinValues.nickel) {
-      coinAmounts.nickels++;
-      return fn(amount - coinValues.nickel, fn);
-    } else if (amount >= coinValues.penny) {
-      coinAmounts.pennies++;
-      return fn(amount - coinValues.penny, fn);
+  }
+
+  function countDimes() {
+    if (remainingAmount  >= coinValues.dime) {
+      coinAmounts.dimes = Math.floor(remainingAmount  / coinValues.dime);
+      remainingAmount = (remainingAmount - coinAmounts.dimes * coinValues.dime).toFixed(2);
     }
+  }
+
+  function countNickels() {
+    if (remainingAmount >= coinValues.nickel) {
+      coinAmounts.nickels = Math.floor(remainingAmount  / coinValues.nickel);
+      remainingAmount = (remainingAmount - coinAmounts.nickels * coinValues.nickel).toFixed(2);
+    }
+  }
+
+  function countPennies() {
+    if (remainingAmount >= coinValues.penny) {
+      coinAmounts.pennies = Math.floor(remainingAmount  / coinValues.penny);
+      remainingAmount = (remainingAmount - coinAmounts.pennies * coinValues.penny).toFixed(2);
+    }
+  }
+
+  function countAllCoins() {
+    countQuarters();
+    countDimes();
+    countNickels();
+    countPennies();
     return coinAmounts;
   }
 
-  return countCoins(startingAmount, countCoins);
+  return countAllCoins();
 }
 
 export default coinCounter;

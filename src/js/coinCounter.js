@@ -1,29 +1,36 @@
 const coinCounter = (amount, coinAmounts = { quarters: 0, dimes: 0, nickels: 0, pennies: 0 }) => {
   const coinValues = {
-    quarter: 0.25,
-    dime: 0.10,
-    nickel: 0.05,
-    penny: 0.01
+    quarter: 25,
+    dime: 10,
+    nickel: 5,
+    penny: 1
   }
 
   if (amount <= 0 || typeof amount !== "number") {
     return "Amount should be a number greater than 0.";
   }
 
-  if (amount >= coinValues.quarter) {
+  const roundedAmount = amount * 100;
+
+  if (roundedAmount >= coinValues.quarter) {
     coinAmounts.quarters++;
-    coinCounter(amount - coinValues.quarter, coinAmounts);
-  } else if (amount >= coinValues.dime) {
+    coinCounter(amount - coinValues.quarter / 100, coinAmounts);
+    console.log(roundedAmount);
+  } else if (roundedAmount >= coinValues.dime) {
     coinAmounts.dimes++;
-    coinCounter(amount - coinValues.dime, coinAmounts);
-  } else if (amount >= coinValues.nickel) {
+    coinCounter(amount - coinValues.dime / 100, coinAmounts);
+    console.log(roundedAmount);
+  } else if (roundedAmount >= coinValues.nickel) {
     coinAmounts.nickels++;
-    coinCounter(amount - coinValues.nickel, coinAmounts);
-  } else if (amount >= coinValues.penny) {
+    coinCounter(amount - coinValues.nickel / 100, coinAmounts);
+    console.log(roundedAmount);
+  } else if (roundedAmount >= coinValues.penny) {
     coinAmounts.pennies++;
-    coinCounter(amount - coinValues.penny, coinAmounts);
+    coinCounter(amount - coinValues.penny / 100, coinAmounts);
+    console.log(roundedAmount);
   }
 
+  console.log(coinAmounts);
   return coinAmounts;
 }
 

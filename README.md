@@ -31,7 +31,7 @@
 
 ## License
 
-Steps:
+Recursive steps:
 
 Take in a number greater than 0. Example: 5
 
@@ -44,3 +44,12 @@ Take the number and subtract 0.25 until you can't subtract 0.25 anymore. Then do
 Base case will be 0, with an array/object with the number of each coin listed.
 
 Termination case will be any non-numeric input that is 0 or a negative number.
+
+Closure steps:
+
+Create an outer function that takes in a number greater than 0. Example: 3
+
+Return an inner function that takes an argument for quarters (.25), and subtract .25 from the number until you can't subtract .25 anymore. Then do the same for dimes, nickels and pennies.
+
+The output should be a count for each coin listed.
+

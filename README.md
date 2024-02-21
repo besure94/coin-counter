@@ -1,8 +1,8 @@
-# Template Repository
+# Coin Counter
 
-#### Use this template repository for starting new projects. Update with new technologies and packages when necessary.
+#### An app that counts the number of quarters, dimes, nickels and pennies for an amount of change.
 
-#### By (Your Name Here)
+#### By Brian Scherner
 
 ## Technologies Used
 
@@ -16,9 +16,11 @@
 
 ## Description
 
+This application counts the numbers of quarters, dimes, nickels and pennies for an amount of change. It currently lacks a UI, as this was a project I worked on to practice writing closures and recursive function.
+
 ## Setup/Installation Requirements
 
-* Select the green "Use this template" button and select "create a new repository".
+* Select the green "Code" button and select "create a new repository".
 * In the terminal, go to your project folder and run the command `$ npm install` to install node_modules.
 * Run the command `$ npm run build` to bundle together JS files.
 * Enter the command `$ npm run start` to start a live development server.
@@ -26,30 +28,11 @@
 
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+None.
 
 ## License
 
-Recursive steps:
+MIT
 
-Take in a number greater than 0. Example: 5
-
-Create array/object with values of each coin (quarters, dimes, nickels and pennies)
-
-Create array/object with properties for each coin, to count the total for each coin.
-
-Take the number and subtract 0.25 until you can't subtract 0.25 anymore. Then do the same with 0.10, 0.05, and 0.01.
-
-Base case will be 0, with an array/object with the number of each coin listed.
-
-Termination case will be any non-numeric input that is 0 or a negative number.
-
-Closure steps:
-
-Create an outer function that takes in a number greater than 0. Example: 3
-
-Return an inner function that takes an argument for quarters (.25), and subtract .25 from the number until you can't subtract .25 anymore. Then do the same for dimes, nickels and pennies.
-
-The output should be a count for each coin listed.
+Copyright(c) 2024 Brian Scherner
 
